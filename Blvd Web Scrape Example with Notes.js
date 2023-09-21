@@ -5,7 +5,7 @@
 const fetchDataByID = async (identifier: string): Promise<any> => {  //fetchDataByID is being assigned to the value identifier, which is the type syntax for variable declaration in TypeScript     
 //async function with a string parameter called identifier. Will return a promise regardless of type
 
-  const result = await school.fetchData( //school is some sort of library that I can't find anywhere. Maybe an internal library at Boulevard. But fetchData appears similar to the fetch function that gets data like an API call
+  const result = await school.fetchData( //school is probably an object with methods we can use to manipulate to make HTTP requests. 
   //await keyword means code waits for response before continuing to execute in a sequential manner
     {
       endpoint: school.ENDPOINTS.DATA, //most likely an API endpoint that accepts requests and sends back responses
@@ -14,7 +14,7 @@ const fetchDataByID = async (identifier: string): Promise<any> => {  //fetchData
         id: identifier,
       },
     },
-    false
+    false //not sure about the false here, would help to know what school is to better understand the method
   )
 
   if (result === null) { //this is to check if the data retrieved from the API is null. Most likely in a situation where the request fails or no data is returned
